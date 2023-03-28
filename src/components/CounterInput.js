@@ -1,18 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { incrementCounter, decrementCounter, reset, resetCounter } from '../Action';
-
+import {CounterIncrement, CounterDecrement} from '../reducers/Action';
 
 function CounterInput() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   return (
     <div>
-        <button onClick={()=> dispatch(incrementCounter())}>Increment</button>
-        <button onClick={()=> dispatch(decrementCounter())}>Decrement</button>
-        <button onClick={()=> dispatch(resetCounter())}>Reset</button>
-
+      <button onClick={()=> dispatch(CounterIncrement())}>+</button>
+      <button onClick={()=> dispatch(CounterDecrement())}>-</button>
     </div>
   )
 }
 
-export default CounterInput
+export default CounterInput;
